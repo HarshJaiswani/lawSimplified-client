@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { BsHeart, BsHeartFill } from "react-icons/bs";
+// import { BsHeart, BsHeartFill } from "react-icons/bs";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../hooks/sanityClient";
 import getFullDate from "../hooks/getDate";
 
 const BlogBlock = (props) => {
   const { article, index } = props;
-  const [fav, setFav] = useState([]);
+  // const [fav, setFav] = useState([]);
   const builder = imageUrlBuilder(client);
   const urlBuilder = (source) => {
     return builder.image(source);
@@ -44,7 +44,7 @@ const BlogBlock = (props) => {
               </button>
             </a>
           </Link>
-          {fav && !fav.includes(index) ? (
+          {/* {fav && !fav.includes(index) ? (
             <span
               onClick={() => setFav([...fav, index])}
               className="text-[crimson] cursor-pointer"
@@ -58,7 +58,7 @@ const BlogBlock = (props) => {
             >
               <BsHeartFill className="text-2xl" />
             </span>
-          )}
+          )} */}
         </div>
       </div>
     </div>
