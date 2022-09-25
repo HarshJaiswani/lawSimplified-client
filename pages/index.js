@@ -5,12 +5,12 @@ import Counters from "../components/Home/Counters";
 import Team from "../components/Home/Team";
 import Clients from "../components/Home/Clients";
 import Articles from "../components/Home/Articles";
-import { createClient } from "next-sanity";
+import { client } from "../hooks/sanityClient";
 
-const Home = ({ blogs }) => {
+const Home = ({ blogs, services }) => {
   return (
     <>
-      <Header />
+      <Header services={services} />
       <div className="home-sections w-full min-h-screen">
         <Counters />
         <OurServices />
@@ -25,16 +25,14 @@ const Home = ({ blogs }) => {
 export default Home;
 
 export async function getServerSideProps(context) {
-  const client = createClient({
-    projectId: "gov5eqnr",
-    dataset: "production",
-    useCdn: false,
-  });
   const query = `*[_type == "blog"][0...3]`;
+  const query2 = `*[_type == "services"]`;
   const blogs = await client.fetch(query);
+  const services = await client.fetch(query2);
   return {
     props: {
       blogs,
+      services,
     },
   };
 }

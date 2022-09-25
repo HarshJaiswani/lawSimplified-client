@@ -6,7 +6,7 @@ import { BsFillGearFill, BsPersonFill } from "react-icons/bs";
 import { MdGroups, MdContactPage } from "react-icons/md";
 import { HiOutlineDocumentText } from "react-icons/hi";
 
-export const Header = () => {
+export const Header = ({ services }) => {
   const [showForm, setShowForm] = useState(false);
   const sections = [
     {
@@ -86,7 +86,9 @@ export const Header = () => {
           )}
         </div>
       )}
-      {showForm && <ContactForm setShowForm={setShowForm} />}
+      {showForm && (
+        <ContactForm setShowForm={setShowForm} services={services} />
+      )}
     </div>
   );
 };
