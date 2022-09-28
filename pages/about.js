@@ -102,7 +102,7 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className="w-[90%] lg:w-[80%] lg:py-0 py-8 mx-auto rounded-md my-12 bg-[gray]/30 flex lg:flex-row flex-col items-center justify-center">
+      <div className="w-[90%] lg:w-[80%] lg:py-0 px-8 py-8 mx-auto rounded-md my-12 bg-[gray]/30 flex lg:flex-row flex-col items-center justify-center">
         <span className="lg:text-2xl text-center text-[black]/80 font-semibold">
           What people who trusted us are saying about us ?
         </span>
